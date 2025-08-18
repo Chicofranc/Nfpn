@@ -73,6 +73,13 @@
     .member-card h4 { margin: 0.5rem 0; color: #d4a373; }
     .member-card p { margin: 0; color: #ccc; }
 
+    /* Footer */
+    footer {
+      margin-top: 2rem; padding: 1rem; background-color: #1e1e1e;
+      color: #aaa; border-top: 2px solid #5a3e2b; text-align: center;
+    }
+    footer a { color: #d4a373; } footer a:hover { color: #fff; }
+
     /* Chatbot */
     #chatButton {
       position: fixed; bottom: 20px; right: 20px;
@@ -102,8 +109,7 @@
   <nav class="container-fluid">
     <ul><li><strong>Nasjonal Framtids Partiet</strong></li></ul>
     <ul>
-      <li><a href="#mission">Mission</a></li>
-      <li><a href="#vision">Vision</a></li>
+      <li><a href="#plans">Future Plans</a></li>
       <li><a href="#members">Members</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -116,18 +122,13 @@
     <a href="#subscribe" class="button">Join Us</a>
   </header>
 
-  <!-- Mission -->
-  <section id="mission" class="container">
-    <h2>Vår Misjon</h2>
-    <p>Vi arbeider for å <strong>fikse veiene</strong> og <strong>senke tobakksavgiften</strong> slik at hverdagen blir lettere for alle.</p>
-  </section>
-
-  <!-- Vision -->
-  <section id="vision" class="container">
-    <h2>Vår Visjon</h2>
-    <p>Vi ser mot en fremtid hvor Norge står sterkt, forent i både tradisjon og framgang. 
-       Vår visjon er et samfunn der gamle verdier lever side om side med moderne løsninger, 
-       og hvor folket alltid kommer først.</p>
+  <!-- Future Plans -->
+  <section id="plans" class="container">
+    <h2>Future Plans</h2>
+    <p>Vi arbeider for å <strong>fikse veiene</strong> slik at folk kan reise trygt og effektivt, 
+       og for å <strong>senke tobakksavgiften</strong> slik at hverdagen blir lettere for alle.</p>
+    <p>I fremtiden ønsker vi også å lansere nye initiativer for infrastruktur, økonomisk rettferdighet, 
+       og fellesskapets styrke.</p>
   </section>
 
   <!-- Members -->
@@ -157,9 +158,9 @@
   <div id="chatbox">
     <div id="chatContent">
       <p><strong>Bot:</strong> Hei! Hva vil du vite mer om?</p>
-      <button onclick="answer('mission')">Hva er deres misjon?</button>
-      <button onclick="answer('future')">Hva planlegger dere framover?</button>
+      <button onclick="answer('plans')">Hva er deres planer?</button>
       <button onclick="answer('join')">Hvordan kan jeg bli med?</button>
+      <button onclick="answer('extra')">Har dere flere prosjekter?</button>
     </div>
   </div>
 
@@ -173,14 +174,14 @@
 
     function answer(choice) {
       let chat = document.getElementById("chatContent");
-      if (choice === "mission") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Vår misjon er å fikse veiene og senke tobakksskatten.</p><button onclick='answer(\"future\")'>Hva planlegger dere framover?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
-      }
-      if (choice === "future") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Vi jobber med å bygge en sterkere infrastruktur og nye initiativer for økonomisk rettferdighet.</p><button onclick='answer(\"mission\")'>Hva er deres misjon?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
+      if (choice === "plans") {
+        chat.innerHTML = "<p><strong>Bot:</strong> Våre planer er å forbedre veier og redusere tobakksavgiften, samt starte nye initiativer i fremtiden.</p><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button><button onclick='answer(\"extra\")'>Har dere flere prosjekter?</button>";
       }
       if (choice === "join") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Du kan bli med ved å melde deg på med e-post eller ta kontakt direkte.</p><button onclick='answer(\"mission\")'>Hva er deres misjon?</button><button onclick='answer(\"future\")'>Hva planlegger dere framover?</button>";
+        chat.innerHTML = "<p><strong>Bot:</strong> Du kan bli med ved å melde deg på med e-post eller ta kontakt direkte.</p><button onclick='answer(\"plans\")'>Hva er deres planer?</button><button onclick='answer(\"extra\")'>Har dere flere prosjekter?</button>";
+      }
+      if (choice === "extra") {
+        chat.innerHTML = "<p><strong>Bot:</strong> Vi utforsker nye prosjekter som støtter fellesskap, kultur og økonomisk rettferdighet. Følg med for mer!</p><button onclick='answer(\"plans\")'>Hva er deres planer?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
       }
     }
   </script>
