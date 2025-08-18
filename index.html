@@ -13,24 +13,15 @@
       line-height: 1.6;
     }
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: sticky; top: 0; z-index: 1000;
       background-color: #1e1e1e;
       border-bottom: 3px solid #5a3e2b;
     }
-    nav a {
-      color: #f5f5f5 !important;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #d4a373 !important;
-    }
-    nav strong {
-      color: #d4a373;
-      font-size: 1.2em;
-    }
-    /* Hero Banner with background image */
+    nav a { color: #f5f5f5 !important; transition: color 0.3s ease; }
+    nav a:hover { color: #d4a373 !important; }
+    nav strong { color: #d4a373; font-size: 1.2em; }
+
+    /* Hero Banner */
     header.hero {
       text-align: center;
       padding: 5rem 2rem;
@@ -41,121 +32,75 @@
     }
     header.hero::before {
       content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.6);
     }
-    header.hero h1,
-    header.hero p,
-    header.hero a {
-      position: relative;
-      z-index: 1;
-    }
+    header.hero h1, header.hero p, header.hero a { position: relative; z-index: 1; }
     header.hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-      color: #d4a373;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      font-size: 3rem; margin-bottom: 0.5rem; color: #d4a373;
+      text-transform: uppercase; letter-spacing: 2px;
     }
-    header.hero p {
-      font-size: 1.3rem;
-      color: #f0e6d2;
-      margin-bottom: 2rem;
-    }
+    header.hero p { font-size: 1.3rem; color: #f0e6d2; margin-bottom: 2rem; }
     header.hero a.button {
-      background-color: #d4a373;
-      color: #1a1a1a;
-      font-weight: bold;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
+      background-color: #d4a373; color: #1a1a1a; font-weight: bold;
+      padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none;
       transition: all 0.3s ease;
     }
-    header.hero a.button:hover {
-      background-color: #b07d55;
-      color: #fff;
-    }
-    /* Content Blocks */
+    header.hero a.button:hover { background-color: #b07d55; color: #fff; }
+
+    /* Sections */
     section {
-      background: #2b2b2b;
-      color: #f0e6d2;
-      padding: 2rem;
-      border-radius: 12px;
-      margin: 2rem auto;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.7);
-      border: 4px double #d4a373;
+      background: #2b2b2b; color: #f0e6d2;
+      padding: 2rem; border-radius: 12px; margin: 2rem auto;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.7); border: 4px double #d4a373;
     }
-    h2, h3 {
-      color: #d4a373;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    h2, h3 { color: #d4a373; text-transform: uppercase; letter-spacing: 1px; }
+
     /* Members Grid */
     .members-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem; margin-top: 1rem;
     }
     .member-card {
-      background-color: #1e1e1e;
-      border: 2px solid #5a3e2b;
-      border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
+      background-color: #1e1e1e; border: 2px solid #5a3e2b; border-radius: 8px;
+      padding: 1rem; text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .member-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+      transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.7);
       border-color: #d4a373;
     }
-    .member-card h4 {
-      margin: 0.5rem 0;
-      color: #d4a373;
+    .member-card h4 { margin: 0.5rem 0; color: #d4a373; }
+    .member-card p { margin: 0; color: #ccc; }
+
+    /* Chatbot */
+    #chatButton {
+      position: fixed; bottom: 20px; right: 20px;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: #d4a373; border: none; color: #1a1a1a;
+      font-weight: bold; font-size: 1.2rem; cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
-    .member-card p {
-      margin: 0;
-      color: #ccc;
+    #chatbox {
+      position: fixed; bottom: 90px; right: 20px;
+      background: #1e1e1e; padding: 1rem;
+      border: 2px solid #d4a373; border-radius: 8px;
+      width: 280px; color: #f5f5f5; font-size: 0.9rem;
+      display: none;
     }
-    /* Quote Section */
-    .quote {
-      font-size: 1.4rem;
-      font-style: italic;
-      text-align: center;
-      color: #d4a373;
+    #chatbox button {
+      background: #d4a373; border: none; padding: 0.4rem 0.8rem;
+      margin: 0.2rem 0; border-radius: 5px; cursor: pointer;
+      width: 100%; color: #1a1a1a; font-weight: bold;
     }
-    .quote::before, .quote::after {
-      content: "❝";
-      font-size: 2rem;
-      color: #5a3e2b;
-      margin: 0 0.5rem;
-    }
-    /* Footer */
-    footer {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #1e1e1e;
-      color: #aaa;
-      border-top: 2px solid #5a3e2b;
-      text-align: center;
-    }
-    footer a {
-      color: #d4a373;
-    }
-    footer a:hover {
-      color: #fff;
-    }
+    #chatbox button:hover { background: #b07d55; color: #fff; }
   </style>
 </head>
 <body>
 
   <!-- Navigation -->
   <nav class="container-fluid">
-    <ul>
-      <li><strong>Nasjonal Framtids Partiet</strong></li>
-    </ul>
+    <ul><li><strong>Nasjonal Framtids Partiet</strong></li></ul>
     <ul>
       <li><a href="#mission">Mission</a></li>
       <li><a href="#vision">Vision</a></li>
@@ -174,8 +119,7 @@
   <!-- Mission -->
   <section id="mission" class="container">
     <h2>Vår Misjon</h2>
-    <p>Vi arbeider for å <strong>fikse veiene</strong> slik at folk kan reise trygt og effektivt, 
-       og for å <strong>senke tobakksavgiften</strong> slik at hverdagen blir lettere for alle.</p>
+    <p>Vi arbeider for å <strong>fikse veiene</strong> og <strong>senke tobakksavgiften</strong> slik at hverdagen blir lettere for alle.</p>
   </section>
 
   <!-- Vision -->
@@ -184,17 +128,6 @@
     <p>Vi ser mot en fremtid hvor Norge står sterkt, forent i både tradisjon og framgang. 
        Vår visjon er et samfunn der gamle verdier lever side om side med moderne løsninger, 
        og hvor folket alltid kommer først.</p>
-  </section>
-
-  <!-- Why Join Us -->
-  <section class="container">
-    <h2>Hvorfor Bli Med?</h2>
-    <ul>
-      <li>Et parti som lytter til folket.</li>
-      <li>Forbedring av infrastruktur og tryggere veier.</li>
-      <li>Lavere skatter og bedre hverdagsøkonomi.</li>
-      <li>Stolthet over norsk kultur og arv.</li>
-    </ul>
   </section>
 
   <!-- Members -->
@@ -207,38 +140,9 @@
     </div>
   </section>
 
-  <!-- News & Updates -->
-  <section class="container">
-    <h2>Nyheter & Oppdateringer</h2>
-    <p>Ingen oppdateringer ennå — følg med for kommende kunngjøringer og arrangementer.</p>
-  </section>
-
-  <!-- Quote Section -->
-  <section class="container">
-    <p class="quote">“Bedre å dø med ære, enn å leve uten håp.”</p>
-  </section>
-
-  <!-- Subscribe -->
-  <section aria-label="Subscribe example" id="subscribe">
-    <div class="container">
-      <article>
-        <hgroup>
-          <h2>Bli Med</h2>
-          <h3>Meld deg på for nyheter og invitasjoner</h3>
-        </hgroup>
-        <form class="grid">
-          <input type="text" id="firstname" name="firstname" placeholder="Fornavn" required>
-          <input type="email" id="email" name="email" placeholder="E-post" required>
-          <button type="submit" onclick="event.preventDefault()">Meld deg på</button>
-        </form>
-      </article>
-    </div>
-  </section>
-
   <!-- Contact -->
   <section id="contact" class="container">
     <h2>Kontakt Oss</h2>
-    <p>Har du spørsmål eller vil du bli med i partiet? Kontakt oss på:</p>
     <p><strong>Email:</strong> <a href="mailto:NasjonalFramtidParti@gmail.com">NasjonalFramtidParti@gmail.com</a></p>
     <p><strong>Telefon:</strong> <a href="tel:+4790718866">+47 90718866</a></p>
   </section>
@@ -247,6 +151,39 @@
   <footer class="container">
     <small>© 2025 Nasjonal Framtids Partiet — Established 2025</small>
   </footer>
+
+  <!-- Chatbot -->
+  <button id="chatButton">💬</button>
+  <div id="chatbox">
+    <div id="chatContent">
+      <p><strong>Bot:</strong> Hei! Hva vil du vite mer om?</p>
+      <button onclick="answer('mission')">Hva er deres misjon?</button>
+      <button onclick="answer('future')">Hva planlegger dere framover?</button>
+      <button onclick="answer('join')">Hvordan kan jeg bli med?</button>
+    </div>
+  </div>
+
+  <script>
+    const chatButton = document.getElementById("chatButton");
+    const chatbox = document.getElementById("chatbox");
+
+    chatButton.addEventListener("click", () => {
+      chatbox.style.display = (chatbox.style.display === "block") ? "none" : "block";
+    });
+
+    function answer(choice) {
+      let chat = document.getElementById("chatContent");
+      if (choice === "mission") {
+        chat.innerHTML = "<p><strong>Bot:</strong> Vår misjon er å fikse veiene og senke tobakksskatten.</p><button onclick='answer(\"future\")'>Hva planlegger dere framover?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
+      }
+      if (choice === "future") {
+        chat.innerHTML = "<p><strong>Bot:</strong> Vi jobber med å bygge en sterkere infrastruktur og nye initiativer for økonomisk rettferdighet.</p><button onclick='answer(\"mission\")'>Hva er deres misjon?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
+      }
+      if (choice === "join") {
+        chat.innerHTML = "<p><strong>Bot:</strong> Du kan bli med ved å melde deg på med e-post eller ta kontakt direkte.</p><button onclick='answer(\"mission\")'>Hva er deres misjon?</button><button onclick='answer(\"future\")'>Hva planlegger dere framover?</button>";
+      }
+    }
+  </script>
 
 </body>
 </html>
