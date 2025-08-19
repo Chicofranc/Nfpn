@@ -20,17 +20,34 @@
   </style>
 </head>
 <body>
-  <nav class="container-fluid">
-    <ul><li><strong>NFP</strong></li></ul>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="plans.html">Future Plans</a></li>
-      <li><a href="values.html">Core Values</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="members.html">Members</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
-    </ul>
-  </nav>
+<nav class="container-fluid" style="display:flex;justify-content:space-between;align-items:center;">
+  <!-- Left side: site title -->
+  <strong style="color:#d4a373;">NFP</strong>
+
+  <!-- Right side: hamburger button -->
+  <button id="menu-toggle" style="background:none;border:none;font-size:1.8rem;color:#d4a373;cursor:pointer;">
+    ☰
+  </button>
+</nav>
+
+<!-- Hidden dropdown menu -->
+<div id="dropdown-menu" style="display:none; position:absolute; top:60px; right:20px; background:#2b2b2b; border:2px solid #5a3e2b; border-radius:8px; padding:1rem; z-index:1000;">
+  <a href="index.html">Home</a><br>
+  <a href="plans.html">Future Plans</a><br>
+  <a href="values.html">Core Values</a><br>
+  <a href="news.html">News</a><br>
+  <a href="members.html">Members</a><br>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const dropdownMenu = document.getElementById("dropdown-menu");
+
+  menuToggle.addEventListener("click", () => {
+    dropdownMenu.style.display = dropdownMenu.style.display === "none" ? "block" : "none";
+  });
+</script>
 
   <header class="hero">
     <h1>Nasjonal Framtids Partiet</h1>
