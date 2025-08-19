@@ -3,188 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nasjonal Framtids Partiet</title>
+  <title>NFP — Home</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
   <style>
-    body {
-      background-color: #121212;
-      color: #f5f5f5;
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
-    }
-    nav {
-      position: sticky; top: 0; z-index: 1000;
-      background-color: #1e1e1e;
-      border-bottom: 3px solid #5a3e2b;
-    }
-    nav a { color: #f5f5f5 !important; transition: color 0.3s ease; }
+    body { background-color: #121212; color: #f5f5f5; font-family: 'Georgia', serif; }
+    nav { background-color: #1e1e1e; border-bottom: 3px solid #5a3e2b; }
+    nav a { color: #f5f5f5 !important; }
     nav a:hover { color: #d4a373 !important; }
-    nav strong { color: #d4a373; font-size: 1.2em; }
-
-    /* Hero Banner */
-    header.hero {
-      text-align: center;
-      padding: 5rem 2rem;
-      background: url('https://images.unsplash.com/photo-1526404803109-1bfa1a077b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      border-bottom: 4px double #5a3e2b;
-      color: #fff;
-      position: relative;
-    }
-    header.hero::before {
-      content: "";
-      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    header.hero h1, header.hero p, header.hero a { position: relative; z-index: 1; }
-    header.hero h1 {
-      font-size: 3rem; margin-bottom: 0.5rem; color: #d4a373;
-      text-transform: uppercase; letter-spacing: 2px;
-    }
-    header.hero p { font-size: 1.3rem; color: #f0e6d2; margin-bottom: 2rem; }
-    header.hero a.button {
-      background-color: #d4a373; color: #1a1a1a; font-weight: bold;
-      padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    header.hero a.button:hover { background-color: #b07d55; color: #fff; }
-
-    /* Sections */
-    section {
-      background: #2b2b2b; color: #f0e6d2;
-      padding: 2rem; border-radius: 12px; margin: 2rem auto;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.7); border: 4px double #d4a373;
-    }
-    h2, h3 { color: #d4a373; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* Members Grid */
-    .members-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem; margin-top: 1rem;
-    }
-    .member-card {
-      background-color: #1e1e1e; border: 2px solid #5a3e2b; border-radius: 8px;
-      padding: 1rem; text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .member-card:hover {
-      transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.7);
-      border-color: #d4a373;
-    }
-    .member-card h4 { margin: 0.5rem 0; color: #d4a373; }
-    .member-card p { margin: 0; color: #ccc; }
-
-    /* Footer */
-    footer {
-      margin-top: 2rem; padding: 1rem; background-color: #1e1e1e;
-      color: #aaa; border-top: 2px solid #5a3e2b; text-align: center;
-    }
-    footer a { color: #d4a373; } footer a:hover { color: #fff; }
-
-    /* Chatbot */
-    #chatButton {
-      position: fixed; bottom: 20px; right: 20px;
-      width: 60px; height: 60px; border-radius: 50%;
-      background: #d4a373; border: none; color: #1a1a1a;
-      font-weight: bold; font-size: 1.2rem; cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
-    #chatbox {
-      position: fixed; bottom: 90px; right: 20px;
-      background: #1e1e1e; padding: 1rem;
-      border: 2px solid #d4a373; border-radius: 8px;
-      width: 280px; color: #f5f5f5; font-size: 0.9rem;
-      display: none;
-    }
-    #chatbox button {
-      background: #d4a373; border: none; padding: 0.4rem 0.8rem;
-      margin: 0.2rem 0; border-radius: 5px; cursor: pointer;
-      width: 100%; color: #1a1a1a; font-weight: bold;
-    }
-    #chatbox button:hover { background: #b07d55; color: #fff; }
+    nav strong { color: #d4a373; }
+    header.hero { text-align: center; padding: 5rem 2rem; background: url('https://images.unsplash.com/photo-1526404803109-1bfa1a077b89?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80') center/cover no-repeat; color: #fff; position: relative; }
+    header.hero::before { content:""; position:absolute; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.6); }
+    header.hero h1, header.hero p { position: relative; z-index: 1; }
+    header.hero h1 { font-size: 3rem; color: #d4a373; text-transform: uppercase; }
+    header.hero p { font-size: 1.3rem; color: #f0e6d2; }
+    footer { text-align: center; margin-top: 2rem; padding: 1rem; border-top: 2px solid #5a3e2b; color: #aaa; }
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav class="container-fluid">
-    <ul><li><strong>Nasjonal Framtids Partiet</strong></li></ul>
+    <ul><li><strong>NFP</strong></li></ul>
     <ul>
-      <li><a href="#plans">Future Plans</a></li>
-      <li><a href="#members">Members</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="plans.html">Future Plans</a></li>
+      <li><a href="values.html">Core Values</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Banner -->
   <header class="hero">
     <h1>Nasjonal Framtids Partiet</h1>
     <p>Established 2025 • For en sterk framtid inspirert av vår historie</p>
-    <a href="#subscribe" class="button">Join Us</a>
   </header>
 
-  <!-- Future Plans -->
-  <section id="plans" class="container">
-    <h2>Future Plans</h2>
-    <p>Vi arbeider for å <strong>fikse veiene</strong> slik at folk kan reise trygt og effektivt, 
-       og for å <strong>senke tobakksavgiften</strong> slik at hverdagen blir lettere for alle.</p>
-    <p>I fremtiden ønsker vi også å lansere nye initiativer for infrastruktur, økonomisk rettferdighet, 
-       og fellesskapets styrke.</p>
-  </section>
+  <main class="container">
+    <section>
+      <h2>Welcome</h2>
+      <p>Velkommen til Nasjonal Framtids Partiet. Vi bygger en sterkere fremtid sammen, med stolthet for vår kulturarv og fokus på fremgang.</p>
+    </section>
 
-  <!-- Members -->
-  <section id="members" class="container">
-    <h2>Ledelse og Medlemmer</h2>
-    <div class="members-grid">
-      <div class="member-card"><h4>Storm Moa</h4><p>Owner</p></div>
-      <div class="member-card"><h4>Vetle Flesjo</h4><p>Vice Owner</p></div>
-      <div class="member-card"><h4>Steven Jens</h4><p>Member</p></div>
-    </div>
-  </section>
+    <!-- Contact stays here -->
+    <section id="contact" class="container">
+      <h2>Kontakt Oss</h2>
+      <p><strong>Email:</strong> <a href="mailto:NasjonalFramtidParti@gmail.com">NasjonalFramtidParti@gmail.com</a></p>
+      <p><strong>Telefon:</strong> <a href="tel:+4790718866">+47 90718866</a></p>
+    </section>
+  </main>
 
-  <!-- Contact -->
-  <section id="contact" class="container">
-    <h2>Kontakt Oss</h2>
-    <p><strong>Email:</strong> <a href="mailto:NasjonalFramtidParti@gmail.com">NasjonalFramtidParti@gmail.com</a></p>
-    <p><strong>Telefon:</strong> <a href="tel:+4790718866">+47 90718866</a></p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="container">
-    <small>© 2025 Nasjonal Framtids Partiet — Established 2025</small>
-  </footer>
-
-  <!-- Chatbot -->
-  <button id="chatButton">💬</button>
-  <div id="chatbox">
-    <div id="chatContent">
-      <p><strong>Bot:</strong> Hei! Hva vil du vite mer om?</p>
-      <button onclick="answer('plans')">Hva er deres planer?</button>
-      <button onclick="answer('join')">Hvordan kan jeg bli med?</button>
-      <button onclick="answer('extra')">Har dere flere prosjekter?</button>
-    </div>
-  </div>
-
-  <script>
-    const chatButton = document.getElementById("chatButton");
-    const chatbox = document.getElementById("chatbox");
-
-    chatButton.addEventListener("click", () => {
-      chatbox.style.display = (chatbox.style.display === "block") ? "none" : "block";
-    });
-
-    function answer(choice) {
-      let chat = document.getElementById("chatContent");
-      if (choice === "plans") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Våre planer er å forbedre veier og redusere tobakksavgiften, samt starte nye initiativer i fremtiden.</p><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button><button onclick='answer(\"extra\")'>Har dere flere prosjekter?</button>";
-      }
-      if (choice === "join") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Du kan bli med ved å melde deg på med e-post eller ta kontakt direkte.</p><button onclick='answer(\"plans\")'>Hva er deres planer?</button><button onclick='answer(\"extra\")'>Har dere flere prosjekter?</button>";
-      }
-      if (choice === "extra") {
-        chat.innerHTML = "<p><strong>Bot:</strong> Vi utforsker nye prosjekter som støtter fellesskap, kultur og økonomisk rettferdighet. Følg med for mer!</p><button onclick='answer(\"plans\")'>Hva er deres planer?</button><button onclick='answer(\"join\")'>Hvordan kan jeg bli med?</button>";
-      }
-    }
-  </script>
-
+  <footer>© 2025 NFP — Established 2025</footer>
 </body>
 </html>
